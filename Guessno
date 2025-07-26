@@ -1,0 +1,42 @@
+package com.company;
+// gussing the number game
+import java.util.Scanner;
+import java.util.Random;
+class quizgame{
+    Random cc=new Random();
+     int k=cc.nextInt(0,100);
+     int f=0;
+     public void guessno(){
+        int l=0;
+         while (k!=l){// to repeat the loop we have to write in while loop not outside while loop
+            System.out.println("Guess your number ");
+            Scanner sb=new Scanner(System.in);
+             l = sb.nextInt();
+             if (l>k){
+                 System.out.println("Think small no ");
+             }
+             else if (l<k){
+                 System.out.println("Think  large no");
+             }
+             else if(k==l){
+                 System.out.println("You guessed correct");
+             }
+             f++;
+        }
+
+
+        System.out.println("You tried "+ f + " times");
+    }
+}
+
+public class Guessno {
+
+    public static void main(String[] args) {
+         quizgame g= new quizgame();// creating class object to access it
+         g.guessno();//object is used to run method of class
+
+
+
+
+    }
+}
