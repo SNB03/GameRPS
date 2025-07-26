@@ -21,7 +21,11 @@ public class App {
             System.out.print(player_name + ", please enter your choice:R for ROCK, P for paper and S for Scissor: ");
 
             char player = sc.next().charAt(0);
-            System.out.println("The computer chose " + computer + " and " + player_name + " chose " + player + "\n");
+              if(player!='R' && player!='S' && player!='P'){
+              System.out.println("Wrong input entered...Enter correctly");
+               continue;
+          }
+            System.out.println("The computer chose " + computer + " and " + "You" + " chose " + player + "\n");
 
 
             if((player=='R' && computer=='R')||(player=='P'&& computer=='P')||(player=='S'&& computer=='S')) {
