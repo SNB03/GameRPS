@@ -1,0 +1,21 @@
+package com.company;
+import java.util.Scanner;
+public class Exercise1 {
+    public static void main(String[] args) {
+        Scanner sb = new Scanner(System.in);
+        System.out.println("Mark of student in Maths");
+        int mark1 = sb.nextInt();
+        System.out.println("Mark of student in Science");
+        int mark2 = sb.nextInt();
+        System.out.println("Mark of student in sst");
+        int mark3 = sb.nextInt();
+        System.out.println("Mark of student in Marathi");
+        int mark4 = sb.nextInt();
+        System.out.println("Mark of student in Hindi");
+        int mark5 = sb.nextInt();
+        int sum = mark1 + mark2 + mark3 + mark4 + mark5;
+        System.out.println("Percentage of student is");
+        float percentage =sum/5f;
+        System.out.println(percentage);
+    }
+}
