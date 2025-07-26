@@ -1,0 +1,45 @@
+package com.company;
+
+public class functionpract {
+
+ 
+     public static void decimaltoanybase(int dnum,int base){// conversion of number base 10 to base 8
+        int sum=0;
+
+       int count=1;
+        while(dnum>0){
+            int r=dnum%base;
+            dnum=dnum/base;
+
+            sum+= r*count;
+            count*=10;
+
+        }
+        System.out.println(sum);
+     }
+     public static int anybasetodecimal(int numb,int d){//conversion of base 8 to 10
+        int sum=0;
+        int count =1;
+        while(numb>0){
+         int r=numb%10;
+         numb=numb/10;
+
+         sum+=r*count;
+         count*=d;
+        }
+         //System.out.println(sum);
+        return sum;
+     }
+
+    public static void main(String[] args) {
+      
+      int a=anybasetodecimal(234,8);
+      int b = anybasetodecimal(76,8);
+      int c=a*b;
+        decimaltoanybase(c,8);
+      
+
+
+
+    }
+}
