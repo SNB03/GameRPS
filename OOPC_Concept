@@ -1,0 +1,104 @@
+package com.company;
+abstract class Pen{
+    abstract void write();
+    abstract void refill();
+}
+class Pen2 extends Pen{
+    void write(){
+        System.out.println("Writting with pen");
+    }
+    void refill(){
+        System.out.println("Refil is of 5 rs");
+
+    }
+}
+     class Monkey {
+    void jump(){
+        System.out.println("I am jumping");
+    }
+    void Bite (){
+        System.out.println("Bitting me");
+    }
+}
+        interface BasicAnimal{
+         void eat();
+         void sleep();
+      }
+      class Human extends Monkey implements BasicAnimal{
+          public void eat(){
+              System.out.println("Eating.....");
+          }
+          public void sleep(){
+              System.out.println("Slepping....");
+          }
+      }
+      abstract class Telephone {
+        abstract void ring();
+          abstract void lift();
+          abstract void disconnect();
+
+      }
+      class SmartTelephone extends Telephone{
+          void ring(){
+              System.out.println("Ringing....");
+
+          }
+           void lift(){
+               System.out.println("LIfting....");
+          }
+          void disconnect(){
+              System.out.println("Disconnected.....");
+
+          }
+
+      }
+      interface  SmartTvRemote{
+          default void mine(){
+              System.out.println("I used default keywird to implement directly");
+           }
+           void speak();
+
+      }
+     interface TvRemote extends SmartTvRemote{
+             default void yours(){
+                 System.out.println("this is your interface");
+
+          }
+
+      }
+      class Stv implements TvRemote{
+          public void speak(){
+              System.out.println("Now i understand the logic");
+          }
+      }
+
+
+
+public class Oopconcept {
+    public static void main(String[] args) {
+        Pen s =new Pen2(); // using reference of pen and object of pen2
+        s.refill();
+        s.write();
+        Pen2 p=new Pen2();//using reference of pen2 and object of pen2
+        p.refill();
+        p.write();
+        Human h = new Human();//object creation of human class
+        //method reunning which is in class human as we created object of own human class
+        h.Bite();
+        h.jump();
+        h.eat();
+        h.sleep();
+        // Telephone t =new Telephone() ;//we can not create object of abstact class it will give error
+        SmartTelephone st=new SmartTelephone();
+        st.disconnect();
+        st.lift();
+        st.ring();
+
+        //  SmartTvRemote tv = new SmartTvRemote() ; //we cannot create object of interface
+        TvRemote tv=new Stv();// taking reference of interface but object of Stv class which implement Tvremote
+        tv.yours();
+        tv.mine();
+        tv.speak();
+
+    }
+}
